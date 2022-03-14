@@ -23,7 +23,7 @@ pipeline{
      stage('workflow') {
          steps{
             withCredentials([file(credentialsId: 'k8-config', variable: 'KUBECONFIG')]) {
-                sh 'kubectl apply -f ${params.Experiment}.yaml'
+                sh 'kubectl apply -f "${params.Experiment}".yaml'
 	            }
             }
         }
