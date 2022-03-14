@@ -15,7 +15,7 @@ pipeline{
 		    test = mdconf.metadata.name
 		    println test
 		    sh """
-		       sed -i "s/$test/$test-${BUILD_NUMBER}/g" pod-deletetest.yaml
+		       sed -i "s/$test/$test-${BUILD_NUMBER}/g" ${params.Experiment}.yaml
 		     """
 	      }
        	}
