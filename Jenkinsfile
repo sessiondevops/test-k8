@@ -12,6 +12,8 @@ pipeline{
 	      script {
 	      	mdconf = valuepod()
 		println mdconf.metadata.name
+		test = mdconf.metadata.name
+		println test
 	      }
        }
      }
