@@ -224,7 +224,7 @@ spec:
                 spec:
                   engineState: active
                   appinfo:
-                    appns: "${paramsappns}"
+                    appns: "${params.appns}"
                     applabel: app=nginx
                     appkind: deployment
                   chaosServiceAccount: litmus-admin
