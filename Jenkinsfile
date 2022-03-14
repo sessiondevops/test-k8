@@ -14,6 +14,7 @@ pipeline{
 		    //println mdconf.metadata.name
 		    test = mdconf.metadata.name
 		    println test
+		println ${params.Experiment}.yaml
 		    sh """
 		       sed -i "s/$test/$test-${BUILD_NUMBER}/g" ${params.Experiment}.yaml
 		     """
@@ -23,7 +24,7 @@ pipeline{
      stage('workflow') {
          steps{
             withCredentials([file(credentialsId: 'k8-config', variable: 'KUBECONFIG')]) {
-                sh 'kubectl apply -f pod-deletetest.yaml'
+                sh 'kubectl apply -f ${params.Experiment}.yaml'
 	            }
             }
         }
