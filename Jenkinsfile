@@ -16,7 +16,7 @@ pipeline{
 		        println test
 		        sh """
 		            sed -i "s/$test/$test-${BUILD_NUMBER}/g" pod-deletetest.yaml
-		            //cat pod-deletetest.yaml
+		            
 		        """
 	      }
        }
