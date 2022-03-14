@@ -24,7 +24,8 @@ pipeline{
          steps{
             withCredentials([file(credentialsId: 'k8-config', variable: 'KUBECONFIG')]) {
                 sh """
-			kubectl apply -f '${params.Experiment}'.yaml
+			cat '${params.Experiment}'.yaml
+			//kubectl apply -f '${params.Experiment}'.yaml
 		"""
 	            }
             }
