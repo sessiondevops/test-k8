@@ -4,7 +4,7 @@ pipeline{
 	{
 	  stage('Checkout Source') {
       steps {
-        git branch: 'test', credentialsId: 'git-cred', url: 'https://github.com/sessiondevops/test-k8.git'
+        git branch: 'main', credentialsId: 'git-cred', url: 'https://github.com/sessiondevops/test-k8.git'
        }
      }
    }
