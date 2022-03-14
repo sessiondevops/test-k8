@@ -22,8 +22,10 @@ pipeline{
        }
      }
      stage('workflow') {
-        withCredentials([file(credentialsId: 'k8-config', variable: 'KUBECONFIG')]) {
-            sh 'kubectl config view'
+         steps{
+            withCredentials([file(credentialsId: 'k8-config', variable: 'KUBECONFIG')]) {
+                sh 'kubectl config view'
+                }
             }
         }
     }
