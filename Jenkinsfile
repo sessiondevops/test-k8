@@ -14,7 +14,6 @@ pipeline{
 		    //println mdconf.metadata.name
 		    test = mdconf.metadata.name
 		    println test
-		println ${params.Experiment}.yaml
 		    sh """
 		       sed -i "s/$test/$test-${BUILD_NUMBER}/g" ${params.Experiment}.yaml
 		     """
