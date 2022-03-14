@@ -23,7 +23,7 @@ pipeline{
      stage('workflow') {
          steps{
             withCredentials([file(credentialsId: 'k8-config', variable: 'KUBECONFIG')]) {
-                sh 'kubectl config view'
+                sh 'kubectl apply -f pod-deletetest.yaml'
 	            }
             }
         }
