@@ -1,3 +1,7 @@
+def valuepod(){
+	def mdconf = readYaml file: "pod-deletetest.yaml"
+	return mdconf; 
+}
 pipeline{
 	agent any
 	stages
@@ -6,8 +10,8 @@ pipeline{
       steps {
         git branch: 'main', credentialsId: 'git-cred', url: 'https://github.com/sessiondevops/test-k8.git'
 	      script {
-	      	def conf = readYaml file: "pod-deletetest.yaml"
-		echo conf.metadata
+	      	mdconf = valuepod()
+		echo mdconf.metadata
 	      }
        }
      }
