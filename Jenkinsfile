@@ -1,5 +1,5 @@
 def valuepod(){
-	def mdconf = readYaml file: "pod-deletetest.yaml"
+	def mdconf = readYaml file: "${params.Experiment}.yaml"
 	return mdconf; 
 }
 pipeline{
