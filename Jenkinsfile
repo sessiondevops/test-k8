@@ -11,8 +11,7 @@ pipeline{
         git branch: 'main', credentialsId: 'git-cred', url: 'https://github.com/sessiondevops/test-k8.git'
 	      script {
 	      	mdconf = valuepod()
-		wflow = println mdconf.metadata.name
-		println wflow
+		println mdconf.metadata.name
 	      }
        }
      }
